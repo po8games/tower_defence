@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Loader</layout>
+        <layout active="1" order="1">Tropical</layout>
+        <event-sheet order="2">Logic</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="grid_tiles" />
+        <family expanded="0" name="destroy_walls" />
+        <family expanded="0" name="solid_walls" />
+        <family expanded="1" name="hud_family" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/background/" />
+        <folder expanded="0" path="object-folder/background/overlay/" />
+        <folder expanded="0" path="object-folder/background/tiles/" />
+        <folder expanded="0" path="object-folder/background/life/" />
+        <folder expanded="0" path="object-folder/background/tower_grid/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/rock_mass/" />
+        <folder expanded="1" path="animation-folder/lake_base/" />
+        <folder expanded="1" path="animation-folder/small_deck/" />
+        <folder expanded="1" path="animation-folder/tree_large_1/" />
+        <folder expanded="1" path="animation-folder/tree_large_2/" />
+        <folder expanded="1" path="animation-folder/tree_med_1/" />
+        <folder expanded="1" path="animation-folder/tree_med_2/" />
+        <folder expanded="1" path="animation-folder/tree_small_1/" />
+        <folder expanded="1" path="animation-folder/tree_small_2/" />
+        <folder expanded="1" path="animation-folder/lake_water/" />
+        <folder expanded="1" path="animation-folder/boat/" />
+        <folder expanded="1" path="animation-folder/grid_tile/" />
+        <folder expanded="1" path="animation-folder/grid_tile_lb/" />
+        <folder expanded="1" path="animation-folder/grid_top/" />
+        <folder expanded="1" path="animation-folder/grid_top_corner/" />
+        <folder expanded="1" path="animation-folder/house/" />
+        <folder expanded="1" path="animation-folder/soil_top_left/" />
+        <folder expanded="1" path="animation-folder/soil_top/" />
+        <folder expanded="1" path="animation-folder/soil_top_right/" />
+        <folder expanded="1" path="animation-folder/soil_bot_left/" />
+        <folder expanded="1" path="animation-folder/soil_bot_right/" />
+        <folder expanded="1" path="animation-folder/soil_bot/" />
+        <folder expanded="1" path="animation-folder/wall_bot_left_corner/" />
+        <folder expanded="1" path="animation-folder/wall_bot_right_corner/" />
+        <folder expanded="1" path="animation-folder/wall_bot_middle/" />
+        <folder expanded="1" path="animation-folder/wall_bot_32_middle/" />
+        <folder expanded="1" path="animation-folder/wall_bot_dmg_end_right_32/" />
+        <folder expanded="1" path="animation-folder/wall_bot_dmg_end_left_32/" />
+        <folder expanded="1" path="animation-folder/wall_bot_middle_32/" />
+        <folder expanded="1" path="animation-folder/wood_pile/" />
+        <folder expanded="1" path="animation-folder/barrel_slime/" />
+        <folder expanded="1" path="animation-folder/mystery_hut/" />
+        <folder expanded="1" path="animation-folder/barrel/" />
+        <folder expanded="1" path="animation-folder/turret_base/" />
+        <folder expanded="1" path="animation-folder/tower_demo/" />
+        <folder expanded="1" path="animation-folder/soil_left/" />
+        <folder expanded="1" path="animation-folder/soil_right/" />
+        <folder expanded="1" path="animation-folder/wall_top_left_corner/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/currency_bar/" />
+        <folder expanded="1" path="animation-folder/resource_bar/" />
+    </folders-expanded>
+</c2uistate>

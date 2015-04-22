@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Logic</name>
+    <events>
+        <variable constant="0" name="Experience" sid="5929448644105224" static="0" type="number">0</variable>
+        <variable constant="0" name="Points" sid="1632775281565989" static="0" type="number">0</variable>
+        <variable comment="Tower currency" constant="0" name="Gold" sid="9507359251533205" static="0" type="number">100</variable>
+        <variable constant="0" name="Resources" sid="3219765920611366" static="0" type="number">55</variable>
+        <variable constant="0" name="Dragging" sid="3126519322013484" static="0" type="number">0</variable>
+        <variable constant="0" name="DragScrollX" sid="915551698772371" static="0" type="number">0</variable>
+        <variable constant="0" name="DragScrollY" sid="7542916097106769" static="0" type="number">0</variable>
+        <variable constant="0" name="DragMouseX" sid="3470419521147276" static="0" type="number">0</variable>
+        <variable constant="0" name="DragMouseY" sid="2279137255318743" static="0" type="number">0</variable>
+        <variable constant="0" name="NewDistance" sid="8290612652585114" static="0" type="number">0</variable>
+        <variable constant="0" name="OrigDistance" sid="6480509948868362" static="0" type="number">0</variable>
+        <variable constant="0" name="startTime" sid="2408205218965195" static="0" type="number">0</variable>
+        <variable constant="0" name="endTime" sid="8409230178204385" static="0" type="number">0</variable>
+        <event-group description="" sid="3112996581847021" title="Touch drag">
+            <sub-events>
+                <event-block sid="321426103067772">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6450528826813258" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Scroll to position" sid="9833911313611085" type="System">
+                            <param id="0" name="X">LayoutWidth/-1</param>
+                            <param id="1" name="Y">LayoutHeight/-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2840944530601666">
+                    <conditions>
+                        <condition id="2" name="Is in touch" sid="4855844830831037" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5354234852717728" type="System">
+                            <param id="0" name="Variable">Dragging</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="566956713920436">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="9952143417874694" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4344146489631506" type="System">
+                            <param id="0" name="Variable">DragMouseX</param>
+                            <param id="1" name="Value">Touch.AbsoluteX</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9905585322697823" type="System">
+                            <param id="0" name="Variable">DragMouseY</param>
+                            <param id="1" name="Value">Touch.AbsoluteY</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7619940142615111">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is in touch" sid="6256590723934577" type="Touch" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8743020217985584" type="System">
+                            <param id="0" name="Variable">Dragging</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1168873527502486" type="System">
+                            <param id="0" name="Variable">DragScrollX</param>
+                            <param id="1" name="Value">scrollx</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8372439359589195" type="System">
+                            <param id="0" name="Variable">DragScrollY</param>
+                            <param id="1" name="Value">scrolly</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5379256726579541">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6877417563908602" type="System">
+                            <param id="0" name="Variable">Dragging</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Scroll to position" sid="3882941506824148" type="System">
+                            <param id="0" name="X">DragScrollX+DragMouseX-Touch.AbsoluteX</param>
+                            <param id="1" name="Y">DragScrollY+DragMouseY-Touch.AbsoluteY</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="6078832398561462" title="Pinch to zoom">
+            <sub-events>
+                <event-block disabled="1" sid="6730016531201479">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9524675553183524" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Set layer scale" sid="4593098392490696" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">2.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="9569682057111649">
+                    <conditions>
+                        <condition id="0" name="On touch start" sid="8765849065993323" type="Touch2" />
+                        <condition id="-8" name="Compare two values" sid="2823870790724897" type="System">
+                            <param id="0" name="First value">Touch2.TouchCount</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4462584711205799" type="System">
+                            <param id="0" name="Variable">OrigDistance</param>
+                            <param id="1" name="Value">Distance(Touch2.TouchX(0),Touch2.TouchY(0),Touch2.TouchX(1),Touch2.TouchY(2))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="5678435280626829">
+                    <conditions>
+                        <condition id="7" name="On touch move" sid="369749664513906" type="Touch2" />
+                        <condition id="-8" name="Compare two values" sid="5272900983605177" type="System">
+                            <param id="0" name="First value">Touch2.TouchCount</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2273474079985398" type="System">
+                            <param id="0" name="Variable">NewDistance</param>
+                            <param id="1" name="Value">Distance(Touch2.TouchX(0),Touch2.TouchY(0),Touch2.TouchX(1),Touch2.TouchY(2))</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="3708100147615323" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">LayerScale(1)*sqrt(NewDistance/OrigDistance)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3557203282681966" title="Towers">
+            <sub-events>
+                <event-block sid="5351277087194162">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="3405753481526216" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">grid_tiles</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1191641362478809" title="Build timer">
+            <sub-events>
+                <event-block sid="4865982391392778">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="4296625144024753" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2057350002757811" title="Currencies">
+            <sub-events>
+                <event-block sid="9520139541560098">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="529966283105344" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="8132422671777143" type="currency_text">
+                            <param id="0" name="Text">Gold</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9749398560098052" type="resources">
+                            <param id="0" name="Text">Resources</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
